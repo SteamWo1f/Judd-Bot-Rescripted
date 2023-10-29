@@ -3,7 +3,7 @@
 
 (Still working on the code, please hold on until I can upload it)
 
-A better version of the original Judd Bot written in JavaScript
+A better version of the original Judd Bot now written in JavaScript
 
 Judd Bot is a discord bot that sends a embed with a random quote, image and header text every hour from text files.
 
