@@ -1,5 +1,8 @@
 ![banner](https://raw.githubusercontent.com/SteamWo1f/Judd-Bot-Rescripted/main/images/Judd-Bot-Rescripted-Banner.png)
 ## Judd Bot Rescripted
+
+(Still working on the code, please hold on until I can upload it)
+
 A better version of the original Judd Bot written in JavaScript
 
 Judd Bot is a discord bot that sends a embed with a random quote, image and header text every hour from text files.
