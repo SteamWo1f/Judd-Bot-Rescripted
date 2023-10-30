@@ -14,6 +14,8 @@ const client = new Client({
     ]
 })
 
+const allowedChannelPost = (process.env.COMMAND_GUILD);
+
 client.on('ready', (c) => {
     console.log(`${c.user.username} (${c.user.tag}) is online!`)
 
@@ -50,19 +52,14 @@ client.on('ready', (c) => {
             .setImage(randomImageUrl)
             .setFooter({ text: `Quotes from Inkipedia (splatoonwiki.org)\nCredits & source: (bit.ly/juddbot)`, iconURL: 'https://cdn.wikimg.net/en/splatoonwiki/images/b/b4/S2_Icon_Inkling_Squid_Green.png' });
 
-            const channel = client.channels.cache.get('CHANNEL_ID'); // Channel where hourly post are sent
+            const channel = client.channels.cache.get(allowedChannelPost); // Channel where hourly post are sent
             
             await channel.send({ 
                 embeds: [embed]
             })
 
-            const postTime = new Date();
-            console.log(`Bot posted at: ${postTime}\n---------------------`);
 
-            const nextPostTime = new Date(postTime.getTime() + 3600000);
-            console.log(`Bot will post next at: ${nextPostTime}\n---------------------`);
-
-        }, 3600000); //
+        }, 3600000);
 
 })
 
@@ -72,10 +69,10 @@ client.on('interactionCreate', async (interaction) => {
 
     const { commandName } = interaction;
 
-    const allowedChannelId = (process.env.COMMAND_GUILD);
+    const allowedChannelHeadpat = (process.env.COMMAND_GUILD2);
 
     if (commandName === 'headpat') {
-        if (interaction.channelId === allowedChannelId) {
+        if (interaction.channelId === allowedChannelHeadpat) {
             const text = "Meow! (Thank you)";
 
             await interaction.reply({
@@ -86,26 +83,21 @@ client.on('interactionCreate', async (interaction) => {
                 }]
             });
         } else {
-            await interaction.reply(`Sorry, the "headpat" command can only be used in <#${allowedChannelId}>.`);
+            await interaction.reply(`Sorry, the "headpat" command can only be used in <#${allowedChannelHeadpat}>.`);
         }
     }
 
     if (commandName === 'credits') {
 
-        if (interaction.channelId === allowedChannelId) {
-            
-            const embed = new EmbedBuilder()
-            .setTitle(`Hourly Judd Quotes Credits`)
-            .setURL('https://github.com/SteamWo1f/Judd-Bot-Rescripted')
-            .setDescription(`Judd Bot Code: https://github.com/SteamWo1f/Judd-Bot-Rescripted\n‎\n Images from: https://splatoonwiki.org/wiki/Judd/Gallery`, inlineCode(true)) // Set the description to the random quote
-            .setImage('https://raw.githubusercontent.com/SteamWo1f/Judd-Bot-Rescripted/main/images/Judd-Bot-Rescripted-Banner.png') // New: set the image in the embed to the random image URL
-            
-            await interaction.reply({ 
-                embeds: [embed]
-            })
-        } else {
-            await interaction.reply(`Sorry, the "credits" command can only be used in <#${allowedChannelId}>.`);
-        }
+        const embed = new EmbedBuilder()
+        .setTitle(`Hourly Judd Quotes Credits`)
+        .setURL('https://github.com/SteamWo1f/Judd-Bot-Rescripted')
+        .setDescription(`Judd Bot Code: https://github.com/SteamWo1f/Judd-Bot-Rescripted\n‎\n Images from: https://splatoonwiki.org/wiki/Judd/Gallery`, inlineCode(true)) // Set the description to the random quote
+        .setImage('https://raw.githubusercontent.com/SteamWo1f/Judd-Bot-Rescripted/main/images/Judd-Bot-Rescripted-Banner.png') // New: set the image in the embed to the random image URL
+        
+        await interaction.reply({ 
+            embeds: [embed]
+        })
     }
 },
 
