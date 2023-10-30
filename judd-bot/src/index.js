@@ -36,7 +36,6 @@ client.on('ready', (c) => {
             const imageUrls = fs.readFileSync(imageUrlFile, 'utf-8').split('\n').filter(Boolean);
             const roleId = `<@&${process.env.PING_ID}>`;
         
-            // Select a random line
             const randomLine = lines[Math.floor(Math.random() * lines.length)];
             const randomMeow = meowLines[Math.floor(Math.random() * meowLines.length)];
             const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
@@ -50,7 +49,9 @@ client.on('ready', (c) => {
             .setDescription(`${roleId}\n‎\n${formattedLine}`, inlineCode(true))
             .setImage(randomImageUrl)
             .setFooter({ text: `Quotes from Inkipedia (splatoonwiki.org)\nCredits & source: (bit.ly/juddbot)`, iconURL: 'https://cdn.wikimg.net/en/splatoonwiki/images/b/b4/S2_Icon_Inkling_Squid_Green.png' });
-            const channel = client.channels.cache.get('956652022101336176');
+
+            const channel = client.channels.cache.get('CHANNEL_ID'); // Channel where hourly post are sent
+            
             await channel.send({ 
                 embeds: [embed]
             })
