@@ -1,11 +1,40 @@
 ![banner](https://raw.githubusercontent.com/SteamWo1f/Judd-Bot-Rescripted/main/images/Judd-Bot-Rescripted-Banner.png)
 ## Judd Bot Rescripted
 
-(Still working on the code, please hold on until I can upload it)
-
 A better version of the original Judd Bot now written in JavaScript
 
 Judd Bot is a discord bot that sends a embed with a random quote, image and header text every hour from text files.
+
+## How to start
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have installed [Node.js](https://nodejs.org/en/download/) and npm.
+- You have a Windows machine. (This guide is tailored for Windows, but the bot should work on other platforms with minor adjustments.)
+- You have a Discord account and permissions to add a bot to a server.
+
+### Installing Judd-Bot-JS
+
+To install Judd-Bot-JS, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install the necessary dependencies.
+
+### Configuring the Bot
+
+1. Rename the `.env.example` file to `.env`.
+2. Fill in the necessary environment variables in the `.env` file. These include your Discord bot token, guild ID, and other necessary IDs.
+
+### Running the Bot
+
+To run Judd-Bot-JS, follow these steps:
+
+1. Navigate to the project directory in your terminal.
+2. Run `node src/index.js` to start the bot.
+
+The bot should now be running and ready to respond to commands on your Discord server.
 
 ## Image credits
 |Image|Credits|
