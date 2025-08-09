@@ -1,4 +1,8 @@
 ![banner](https://raw.githubusercontent.com/SteamWo1f/Judd-Bot-Rescripted/main/images/Judd-Bot-Rescripted-Banner.png)
+
+
+### Note: I have no plans currently to update or maintain this project in the foreseeable future, use at your own risk.
+---
 ## Judd Bot Rescripted
 
 A better version of the original Judd Bot now written in JavaScript
